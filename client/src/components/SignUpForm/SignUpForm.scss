@@ -1,0 +1,30 @@
+@import "../../scss/index.scss";
+
+.sign-up-form {
+    h2 {
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+
+    .form-group {
+        padding-bottom: 10px;
+
+        input {
+            font-size: 18apx;
+        }
+    }
+
+    button {
+        width: 100%;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 50px;
+        margin-top: 40px;
+
+        .spinner-border {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

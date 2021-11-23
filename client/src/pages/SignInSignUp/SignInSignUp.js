@@ -2,26 +2,34 @@ import React, { useState } from 'react'
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faUsers, faComment } from '@fortawesome/free-solid-svg-icons'
-import BasicModal from '../../components/modal/BasicModal/'
-
 
 import './SignInSignUp.scss'
+import BasicModal from '../../components/modal/BasicModal'
+import SignUpForm from '../../components/SignUpForm'
+import SignInForm from '../../components/SignInForm'
 
-const SignInSignUp = () => {
-    const [showModal, setShowModal] = useState(false)
-    const [contentModal, setContentModal] = useState(null)
+
+export default function SignInSingUp(props) {
+    const { setRefreshCheckLogin } = props;
+    const [showModal, setShowModal] = useState(false);
+    const [contentModal, setContentModal] = useState(null);
 
     const openModal = content => {
         setShowModal(true);
         setContentModal(content);
     };
 
+
     return (
         <>
-            <Container className='signin-signup' fluid>
+            <Container className="signin-signup" fluid>
                 <Row>
                     <LeftComponent />
-                    <RightComponent openModal={openModal} setShowModal={setShowModal} />
+                    <RightComponent
+                        openModal={openModal}
+                        setShowModal={setShowModal}
+                        setRefreshCheckLogin={setRefreshCheckLogin}
+                    />
                 </Row>
             </Container>
             <BasicModal show={showModal} setShow={setShowModal} >
@@ -30,8 +38,6 @@ const SignInSignUp = () => {
         </>
     )
 }
-
-export default SignInSignUp
 
 const LeftComponent = () => {
     return (
@@ -47,7 +53,7 @@ const LeftComponent = () => {
 }
 
 const RightComponent = (props) => {
-    const { openModal, setShowModal } = props;
+    const { openModal, setShowModal, setRefreshCheckLogin } = props;
 
     return (
         <Col className='signin-signup__right' xs={6}>
@@ -57,18 +63,18 @@ const RightComponent = (props) => {
                 <h3>Únete a Twittit hoy mismo</h3>
                 <Button
                     variant='primary'
-                    onClick={() => openModal(<h2>Formulario de Registro</h2>)}
+                    onClick={() => openModal(<SignUpForm setShowModal={setShowModal} />)}
                 >
                     Regístrate
                 </Button>
 
                 <Button
                     variant='outline-primary'
-                    onClick={() => openModal(<h2>Formulario de Login</h2>)}
+                    onClick={() => openModal(<SignInForm setRefreshCheckLogin={setRefreshCheckLogin} />)}
                 >
                     Iniciar sesión
                 </Button>
             </div>
         </Col>
-    )
+    );
 }
