@@ -11,7 +11,7 @@ export default function Routing(props) {
             <Routes>
                 {map(configRouting, (route, index) => (
                     <Route key={index} path={route.path} exact={route.exact}
-                        element={`<${route.page}/>`}
+                        element={route.page}
                         setRefreshCheckLogin={setRefreshCheckLogin}
                     />
                 ))}

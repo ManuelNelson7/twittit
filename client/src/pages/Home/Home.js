@@ -1,12 +1,45 @@
 import React from 'react'
+import BasicLayout from '../../layout/BasicLayout/BasicLayout'
 
 import "./Home.scss"
 
-const Home = () => {
+const Home = (props) => {
+    const {setRefreshCheckLogin} = props;
+
     return (
-        <div>
-            <h2>Homepage</h2>
-        </div>
+
+        <BasicLayout className="home" setRefreshCheckLogin={setRefreshCheckLogin}>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+
+            <h2> Home</h2><h2> Home</h2>
+
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            <h2> Home</h2>
+            
+        </BasicLayout>
     )
 }
 

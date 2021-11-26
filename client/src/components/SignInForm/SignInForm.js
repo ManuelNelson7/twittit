@@ -56,6 +56,7 @@ const SignInForm = (props) => {
                 <Form.Group>
                     <Form.Control type="email" placeholder="Email" defaultValue={formData.email} name="email" />
                     <Form.Control type="password" placeholder="Contraseña" defaultValue={formData.password} name="password" />
+                    
                     <Button variant="primary" type="submit">
                         {!signInLoading ? "Iniciar sesión" : <Spinner animation="border" />}
                     </Button>

@@ -21,8 +21,8 @@ function App() {
 
   return (
     <AuthContext.Provider value={user}>
-      {user? (
-        <h1>Logeado</h1>
+      {!user ? (
+        <Routing setRefreshCheckLogin={setRefreshCheckLogin} />
       ) : (
         <SignInSignUp setRefreshCheckLogin={setRefreshCheckLogin} />
       )}
